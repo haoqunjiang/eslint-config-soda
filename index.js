@@ -15,6 +15,5 @@ module.exports = {
         'eslint-config-soda/rules/legacy',
         'eslint-config-soda/rules/browser',
         'eslint-config-soda/rules/node'
-    ],
-    parser: 'babel-eslint'
+    ]
 };

@@ -1,5 +1,4 @@
 module.exports = {
-    parser: 'babel-eslint',
     extends: [
         'eslint-config-soda/rules/esnext',
 
@@ -13,6 +12,5 @@ module.exports = {
         'eslint-config-soda/rules/variables',
 
         'eslint-config-soda/rules/node'
-    ],
-    parser: 'babel-eslint'
+    ]
 };

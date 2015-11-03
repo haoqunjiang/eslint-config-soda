@@ -1,5 +1,4 @@
 module.exports = {
-    parser: 'babel-eslint',
     extends: [
         'eslint-config-soda/rules/esnext',
 
@@ -14,6 +13,5 @@ module.exports = {
 
         // must be placed after esnext in order to override some of its rules
         'eslint-config-soda/rules/browser'
-    ],
-    parser: 'babel-eslint'
+    ]
 };
