@@ -1,5 +1,5 @@
 module.exports = {
-    parse: 'babel-eslint',
+    // parser: 'babel-eslint',  // seems eslint can't process this setting when it's in a subpath
     plugins: [
         'react'
     ],
