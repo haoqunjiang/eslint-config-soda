@@ -4,7 +4,6 @@ module.exports = {
 
         'eslint-config-soda/rules/react',
 
-        'eslint-config-soda/rules/ast',
         'eslint-config-soda/rules/best-practices',
         'eslint-config-soda/rules/complexity',
         'eslint-config-soda/rules/strict',

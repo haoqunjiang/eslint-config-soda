@@ -1,6 +1,5 @@
 module.exports = {
     extends: [
-        'eslint-config-soda/rules/ast',
         'eslint-config-soda/rules/best-practices',
         'eslint-config-soda/rules/complexity',
         'eslint-config-soda/rules/strict',
