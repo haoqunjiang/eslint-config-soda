@@ -125,6 +125,12 @@ module.exports = {
         // switch 语句不强制要求带 default
         'default-case': 0,
 
+        // Disallows lexical declarations (let/const/function/class) in case/default clauses.
+        // Because lexical declarations are visible in the entire block but only gets initialized when it is assigned.
+        // This is a typical TDZ problem.
+        // case 语句中不准出现块级变量定义（let/const/function/class），因为这个可能会带来 TDZ 的问题
+        'no-case-declarations': 2,
+
         // switch 语句如果出现了 fall-through 则警告
         'no-fallthrough': 1,
 
@@ -269,7 +275,7 @@ module.exports = {
         'no-with': 2,
 
         // 调用 parseInt 方法需要提供 radix 参数
-        'radix': 1,
+        'radix': [1, 'always'],
 
         // 变量就近声明就好，全部提升到顶部不容易阅读
         'vars-on-top': 0,
