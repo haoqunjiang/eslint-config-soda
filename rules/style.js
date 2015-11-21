@@ -29,7 +29,7 @@ module.exports = {
         'quotes': [1, 'single', 'avoid-escape'],
 
         // 采用 4 个空格缩进，可以使代码看起来更整洁点
-        'indent': [1, 4],   // eslint-disable-line no-magic-numbers
+        'indent': [1, 4, { SwitchCase: 1 }],   // eslint-disable-line no-magic-numbers
 
         // 严禁空格和 Tab 混用
         'no-mixed-spaces-and-tabs': 2,
