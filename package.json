@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-soda",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "ESLint configurations for my personal projects",
   "main": "index.js",
   "scripts": {
