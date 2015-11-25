@@ -20,7 +20,7 @@ module.exports = {
         // 最多允许嵌套两层回调
         'max-nested-callbacks': [1, 4],
 
-        // [cyclomatic complexity](http://en.wikipedia.org/wiki/Cyclomatic_complexity) should not be greater than 8
+        // [cyclomatic complexity](http://en.wikipedia.org/wiki/Cyclomatic_complexity) should be no greater than 8
         // 圈复杂度上限为 8
         'complexity': [1, 8]
     }
