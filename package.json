@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/sodatea/eslint-config-soda.git"
   },
-  "author": "Haoqun Jiang <sodazju@gmail.com>",
+  "author": "Haoqun Jiang <sodazju+npm@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sodatea/eslint-config-soda/issues"
