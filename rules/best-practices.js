@@ -231,7 +231,9 @@ module.exports = {
         'no-octal': 2,
 
         // 禁止对函数参数进行覆盖赋值（不过可以对参数的属性进行操作）
-        'no-param-reassign': [2, { props: false }],
+        // 这里的参数指的是一个 local binding，所以参数解构里出现的 binding 也属于一个参数
+        // e.g. `function func({ from }) { from = from || 2; }` here from is a local binding, thus leading to a warning
+        'no-param-reassign': [1, { props: false }],
 
         // 在 Node.js 中，尽量使用 config.js 文件而不是 process.env 来设置配置参数
         'no-process-env': 1,
