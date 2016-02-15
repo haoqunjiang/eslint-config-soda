@@ -21,6 +21,7 @@ module.exports = {
         // 禁止在条件表达式中进行赋值操作，除非有额外加上括号（比如 while((a = b)) 以及 while ((a = b) !== c) 都是被允许的）
         'no-cond-assign': [2, 'except-parens'],
 
+        // Comparing a literal expression in a condition is usually a typo or development trigger for a specific behavior
         // 条件表达式不能为常数（比如 if (true) 这种）
         'no-constant-condition': 1,
 
@@ -156,10 +157,7 @@ module.exports = {
         'no-else-return': 1,
 
         // JavaScript 没有 goto 语句，label 只在循环和 switch 中有用，所以其他地方如果出现 label 那一定是出问题了
-        'no-empty-label': 2,
-
-        // 个人以为，一旦用到 label 的时候一定是很有必要的，毕竟 JS 没有了 goto 没有人会贪图方便而滥用 label 的
-        'no-labels': 0,
+        'no-labels': { alowwLoop: true, allowSwitch: true },
 
         // 禁止使用 eval
         'no-eval': 2,

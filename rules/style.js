@@ -51,16 +51,8 @@ module.exports = {
         // 符号形式的单目操作符（++、--、-、+、!、!! 等）后面不应有空格
         'space-unary-ops': [1, { words: true, nonwords: false }],
 
-        // 关键词 if / else / for / while / do / switch / try / catch / finally / with 之后需要跟空格
-        // 比如 if (cond) 不能写成 if(cond)
-        'space-after-keywords': [1, 'always'],
-
-        // else, while 之类的关键词前面必须有空格
-        // 比如 if (a) { b() } else { c(); }
-        'space-before-keywords': [1, 'always'],
-
-        // 对上一个规则的补充，针对 return / throw / case
-        'space-return-throw-case': 1,
+        // 关键词前后都需要有空格
+        'keyword-spacing': [1, { before: true, after: true, overrides: null }],
 
         // 函数定义的 () 前不应有空格
         // 示例：function() {}、function foo() {}

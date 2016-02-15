@@ -3,8 +3,10 @@ module.exports = {
     plugins: [
         'react'
     ],
-    ecmaFeatures: {
-        jsx: true
+    parserOptions: {
+        ecmaFeatures: {
+            jsx: true
+        }
     },
     rules: {
         // Use double quotes in JSX attributes, unless there're already double quotes in it

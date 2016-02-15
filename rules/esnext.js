@@ -1,37 +1,18 @@
 module.exports = {
     parser: 'babel-eslint',
     env: {
-        es6: false
+        es6: true
     },
-    ecmaFeatures: {
-        arrowFunctions: true,
-        binaryLiterals: true,
-        octalLiterals: true,
-        blockBindings: true,
-        classes: true,
-        defaultParams: true,
-        destructuring: true,
-        forOf: true,
-        modules: true,
-        objectLiteralComputedProperties: true,
-        objectLiteralShorthandMethods: true,
-        objectLiteralShorthandProperties: true,
-        restParams: true,
-        spread: true,
-        superInFunctions: true,
-        templateStrings: true,
-        generators: true,
-        regexUFlag: true,
-        unicodeCodePointEscapes: false,
+    parserOptions: {
+        ecmaVersion: 6,
+        ecmaFeatures: {
+            // ES6+ modules are strict implicitly
+            impliedStrict: true,
 
-        // should not be enabled for non-react projects
-        jsx: false,
-
-        // IMO, this feature is very error-prone
-        objectLiteralDuplicateProperties: false,
-
-        // not polyfillable; most JavaScript engines hasn't implemented this feature
-        regexYFlag: false
+            // jsx should not be enabled for non-react projects
+            jsx: false
+        },
+        sourceType: 'module'
     },
     rules: {
         // 箭头函数的参数，即使只有一个也要带上括号
@@ -88,8 +69,8 @@ module.exports = {
         // 禁止复杂的字符串拼接，用模板引擎或 ES6 template string 替代
         'prefer-template': 1,
 
-        // Disallow arrow functions where a condition is expected, so as to avoid potential typo
-        'no-arrow-condition': 2,
+        // Disallow arrow functions in places where it could be confused with a comparison operator, so as to avoid potential typo
+        'no-confusing-arrow': 2,
 
         // Require braces in arrow function body when there might be confusions
         'arrow-body-style': [1, 'as-needed']
