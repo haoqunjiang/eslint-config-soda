@@ -5,7 +5,7 @@ module.exports = {
         'max-statements': [2, 30],
 
         // 每行最多 140 个字符，比 80 个字符多一点，毕竟可能会有很多缩进，而且反正显示器够大
-        'max-len': [1, 140],
+        'max-len': [1, { code: 140, ignoreComments: true, ignoreUrls: true }],
 
         // If a function has too many parameters, you should consider taking an `option` object as the paramter.
         // Better turn off for AMD & Angular 1.x modules by inline comments
@@ -20,8 +20,10 @@ module.exports = {
         // 最多允许嵌套两层回调
         'max-nested-callbacks': [1, 4],
 
-        // [cyclomatic complexity](http://en.wikipedia.org/wiki/Cyclomatic_complexity) should be no greater than 8
-        // 圈复杂度上限为 8
+        // [cyclomatic complexity](http://en.wikipedia.org/wiki/Cyclomatic_complexity) should be no greater than 15
+        // Why 15? [Here are some other recommendations](https://github.com/eslint/eslint/issues/4808#issuecomment-167795140)
+        // And I chose 15 as a personal preference
+        // 圈复杂度上限为 15
         'complexity': [1, 8]
     }
-};
+}

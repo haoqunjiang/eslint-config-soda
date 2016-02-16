@@ -14,10 +14,11 @@ module.exports = {
         'handle-callback-err': 2,
 
         // 这个解释起来有点麻烦，一般也用不到，可以参见官方文档 http://eslint.org/docs/rules/no-mixed-requires
-        // 主要有两点：
+        // 主要有这几点：
         // 1. node 中 require 语句和一般的 var 语句要分开
         // 2. 不同类型的 require (core module / file module...) 也需要分开
-        'no-mixed-requires': [1, { grouping: true }],
+        // 3. allow `require('module')('nested')`, but not `require('module').someFn('param')`
+        'no-mixed-requires': [1, { grouping: true, allowCall: true }],
 
         // var foo = new require('foo'); 是把 require 当成构造器函数了，与 var foo = new (require('foo')); 不等价，容易误用
         // 更好的做法是 var Foo = require('foo'); var foo = new Foo();
@@ -40,4 +41,4 @@ module.exports = {
         // 个人感觉不是很有必要
         'global-require': 0
     }
-};
+}

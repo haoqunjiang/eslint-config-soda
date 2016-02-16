@@ -8,4 +8,4 @@ module.exports = {
         'prefer-arrow-callback': 0,
         'prefer-template': 0
     }
-};
+}

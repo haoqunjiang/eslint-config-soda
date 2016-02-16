@@ -11,8 +11,7 @@ module.exports = {
 
             // jsx should not be enabled for non-react projects
             jsx: false
-        },
-        sourceType: 'module'
+        }
     },
     rules: {
         // 箭头函数的参数，即使只有一个也要带上括号
@@ -21,14 +20,24 @@ module.exports = {
         // => 前后都应有空格
         'arrow-spacing': [1, { before: true, after: true }],
 
+        // 生成器函数的星号前需要有空格，星号后不能有空格，例如 function *foo() {}
+        'generator-star-spacing': [1, { before: true, after: false }],
+
+        // yield *gen()
+        'yield-star-spacing': [1, { before: true, after: false }],
+
+        // Disallows spaces inside of the curly brace pair of template string interpolations
+        'template-curly-spacing': [1, 'never'],
+
+        // ES2015 provides a default class constructor if one is not specified.
+        // As such, it is unnecessary to provide an empty constructor or one that simply delegates into its parent class.
+        'no-useless-constructor': 1,
+
         // 派生类的构造器函数必须有 super() 调用，其他情况下构造器函数都不允许调用 super()
         'constructor-super': 2,
 
         // 派生类必须先调用过 super() 才能引用 this
         'no-this-before-super': 2,
-
-        // 生成器函数的星号前需要有空格，星号后不能有空格，例如 function *foo() {}
-        'generator-star-spacing': [1, { before: true, after: false }],
 
         // 不要写出不带 yield 语句的生成器函数
         'require-yield': 1,
@@ -47,12 +56,21 @@ module.exports = {
         // 禁止不产生新变量的 destructuring pattern
         'no-empty-pattern': 2,
 
+        // `new Symbol()` throws a `TypeError` exception
+        'no-new-symbol': 2,
+
+        // 1. Use object shorthands only when it can imporve readability
+        // 2. Notice that [object literal shorthands cannot be used as constructors](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions#Method_definitions_are_not_constructable)
         // 是否使用 object shorthand 应该由开发者视可读性而定，不一刀切
-        'object-shorthand': 0,
+        'object-shorthand': 0,  // [1, 'always', { ignoreConstructors: true }]
 
         // 如果需要使用的方法可以用 Reflect 的接口完成，则优先使用 Reflect
         // 不过由于 Reflect 不可被 polyfill 而且也没有完整实现，暂不开启
         'prefer-reflect': 0,
+
+        // es6 version of the rule `no-restricted-modules`
+        // 禁止某些库的使用，一般情况下用不到
+        // no-restricted-imports: [2, 'os', 'fs']
 
         // 仅使用 let 和 const，不使用 var
         'no-var': 1,
@@ -62,6 +80,9 @@ module.exports = {
 
         // 如果仅仅是为了使用数组作为函数参数，那么应该优先考虑使用 spread operator 而不是 .apply()
         'prefer-spread': 1,
+
+        // prefer rest parameters than `arguments`
+        'prefer-rest-params': 1,
 
         // 回调函数尽可能使用箭头函数，而不是 Inline 的匿名函数
         'prefer-arrow-callback': 1,
@@ -73,6 +94,14 @@ module.exports = {
         'no-confusing-arrow': 2,
 
         // Require braces in arrow function body when there might be confusions
-        'arrow-body-style': [1, 'as-needed']
+        'arrow-body-style': [1, 'as-needed'],
+
+        // sort import statements
+        // http://eslint.org/docs/rules/sort-imports
+        'sort-imports': [1, {
+            ignoreCase: false,
+            ignoreMemberSort: false,
+            memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single']
+        }]
     }
-};
+}

@@ -6,8 +6,11 @@ module.exports = {
         // 只能把 var 定义的变量当做块级变量来用，避免因为 variable hoisting 带来的难以察觉的 bug，同时方便将来迁移到 ES6 的 let/const
         'block-scoped-var': 1,
 
+        // Identifiers should be declared before its usage
+        // Functions are hoisted so it's safe to use before declaration.
+        // Classes are not, so it *might* be danger to do so.
         // 除函数以外，所有变量在使用前都应被定义
-        'no-use-before-define': [2, 'nofunc'],
+        'no-use-before-define': [2, { functions: false, classes: true }],
 
         // 个人觉得，在声明时是否初始化变量不是特别重要
         'init-declarations': 0,
@@ -39,6 +42,8 @@ module.exports = {
         // 定义过的变量都要被用到，不然的话很可能是没重构完导致的错误
         'no-unused-vars': [1, { vars: 'all', args: 'after-used' }],
 
-        'no-magic-numbers': [1, { ignore: [-1, 0, 1, 2] }]
+        // Magic numbers should preferably be replaced by named constants
+        // -1 and 0 are allowed for the convinience of array manipulations
+        'no-magic-numbers': [1, { ignore: [-1, 0] }]    // eslint-disable-line no-magic-numbers
     }
-};
+}

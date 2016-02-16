@@ -10,4 +10,4 @@ module.exports = {
 
         'eslint-config-soda/rules/node'
     ]
-};
+}

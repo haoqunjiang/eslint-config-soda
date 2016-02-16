@@ -2,8 +2,8 @@ module.exports = {
     rules: {
         // Stylistic Issues
 
-        // 使用分号
-        'semi': [1, 'always'],
+        // [semicolon-less style](https://www.youtube.com/watch?v=gsfbh17Ax9I)
+        'semi': [1, 'never'],
 
         // 分号前不得有空格，分号后（如果有内容）必须有空格
         'semi-spacing': [1, { before: false, after: true }],
@@ -21,9 +21,12 @@ module.exports = {
         // 对于一长串字符串的拼接，感觉在行末更舒服
         'operator-linebreak': 0,    // [1, before]
 
+        // Enforces empty newlines after var, let or const
         // 在变量定义后应当跟着一行空行
-        // 目前尚有 bug 所以暂时关闭这个检查
-        'newline-after-var': 0,     // [1, always]
+        'newline-after-var': [1, 'always'],
+
+        // Chained method calls with a depth greater than 3 should be followd by newline per call
+        'newline-per-chained-call': [1, { ignoreChainWithDepth: 2 }],
 
         // 一律使用单引号，除非字符串的值中有单引号
         'quotes': [1, 'single', 'avoid-escape'],
@@ -44,15 +47,18 @@ module.exports = {
         // 调用函数时，函数名和括号间不能有空格
         'no-spaced-func': 1,
 
+        // Alerts for whitespace around the dot or before the opening bracket before properties of objects if they are on the same line
+        'no-whitespace-before-property': 1,
+
         // 中缀操作符两侧都需要有空格（a|0 这种强制转换 a 为 int32 类型的操作除外）
-        'space-infix-ops': [1, { int32Hint: false }],
+        'space-infix-ops': [1, { int32Hint: true }],
 
         // 单词形式的单目操作符（new、delete、void、typeof 等）后面应当跟有空格
         // 符号形式的单目操作符（++、--、-、+、!、!! 等）后面不应有空格
         'space-unary-ops': [1, { words: true, nonwords: false }],
 
         // 关键词前后都需要有空格
-        'keyword-spacing': [1, { before: true, after: true, overrides: null }],
+        'keyword-spacing': [1, { before: true, after: true, overrides: {} }],
 
         // 函数定义的 () 前不应有空格
         // 示例：function() {}、function foo() {}
@@ -116,15 +122,15 @@ module.exports = {
         // 定义 object literal 时，属性名如非必要，不应加引号，不过需要优先保证一致性（即，如果有一个属性名必须加引号，则其它属性名也要加）
         'quote-props': [1, 'consistent-as-needed'],
 
-        // 以下划线开头的变量命名个人感觉并无不妥
-        'no-underscore-dangle': 0,
+        // Disallow identifier naming with dangling underscores, unless as members of `this`
+        'no-underscore-dangle': [1, { allowAfterThis: true }],
 
         // 采用驼峰命名法（不检查对象属性的命名，考虑到可能会和后端数据通信等情况）
         'camelcase': [1, { properties: 'never' }],
 
-        // 如果要把 this 赋给一个临时的变量，那这个变量必须命名为 self，而不是 that 或者其他什么
+        // 如果要把 this 赋给一个临时的变量，那这个变量必须命名为 self 或者 that，不能有其他别名
         // ES6+ 的项目请使用箭头函数，不需要这个规则，参见 smells/no-this-assign 规则
-        'consistent-this': [1, 'self'],
+        'consistent-this': [1, 'self', 'that'],
 
         // 不要求每个函数都有 function name，函数表达式里还是允许匿名函数的，不过给函数表达式加上函数名有利于输出更清晰的 stack trace
         'func-names': 0,
@@ -166,6 +172,8 @@ module.exports = {
         // 变量声明主要考虑可读性，不必强制在一个 var 语句或者多个语句中声明
         'one-var': 0,
 
+        'one-var-declaration-per-line': 0,
+
         // 变量声明的顺序由作者自行考虑，不强制
         'sort-vars': 0,
 
@@ -174,6 +182,10 @@ module.exports = {
 
         // 这个规则用于置顶代码中标示符的命名规范
         // 个人觉得有点不必要……而且真正想要规范的部分是无法简单地用正则表达出来的（比如 button 必须缩写为 btn 之类的规范）
-        'id-match': 0
+        'id-match': 0,
+
+        // Blacklist certain identifiers to prevent them being used
+        // in variable declarations, function declarations and object properties
+        'id-blacklist': 0
     }
-};
+}

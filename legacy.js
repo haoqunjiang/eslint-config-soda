@@ -11,4 +11,4 @@ module.exports = {
 
         'eslint-config-soda/rules/legacy'
     ]
-};
+}

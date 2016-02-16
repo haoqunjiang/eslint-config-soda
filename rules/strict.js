@@ -5,4 +5,4 @@ module.exports = {
         // therefore the Use Strict Directives are no longer necessary
         strict: 0
     }
-};
+}

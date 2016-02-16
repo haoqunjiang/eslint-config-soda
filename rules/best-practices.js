@@ -1,6 +1,10 @@
 // Possible Errors & Best Practices
 module.exports = {
     rules: {
+        // Array has several methods for filtering, mapping, and folding.
+        // If we forget to write return statement in a callback of those, it's probably a mistake.
+        'array-callback-return': 2,
+
         // Disallow trailing commas, which will raise errors in IE8-
         'comma-dangle': [2, 'never'],
 
@@ -41,6 +45,10 @@ module.exports = {
 
         // 空代码块应该警告
         'no-empty': 1,
+
+        // Disallow use of empty functions
+        // If you have to do so, turn this rule off inline
+        'no-empty-function': 2,
 
         // catch 代码块中不允许对 error 对象覆盖赋值
         'no-ex-assign': 2,
@@ -93,8 +101,17 @@ module.exports = {
         // 直接定义稀疏数组字面量有很多潜在的风险，参见官方文档 http://eslint.org/docs/rules/no-sparse-arrays
         'no-sparse-arrays': 2,
 
-        // 出现 unreachable code 说明代码有问题
+        // The presence of unreachable code is usually a sign of a coding error
         'no-unreachable': 2,
+
+        // Self assignments have no effect, so probably those are an error due to incomplete refactoring
+        'no-self-assign': 2,
+
+        // Variables in a loop condition often are modified in the loop. If not, it's possibly a mistake
+        'no-unmodified-loop-condition': 2,
+
+        // Labels that are declared and not used anywhere in the code are most likely an error due to incomplete refactoring
+        'no-unused-labels': 2,
 
         // 不要试图直接拿变量和 NaN 比较（因为永远返回 false），用 isNaN 和 Number.isNaN
         'use-isnan': 2,
@@ -157,7 +174,10 @@ module.exports = {
         'no-else-return': 1,
 
         // JavaScript 没有 goto 语句，label 只在循环和 switch 中有用，所以其他地方如果出现 label 那一定是出问题了
-        'no-labels': { alowwLoop: true, allowSwitch: true },
+        'no-labels': [2, { allowLoop: true, allowSwitch: true }],
+
+        // If a loop contains no nested loops or switches, labeling the loop is unnecessary
+        'no-extra-label': 2,
 
         // 禁止使用 eval
         'no-eval': 2,
@@ -188,6 +208,9 @@ module.exports = {
         // 不允许对 number/string 类型进行隐式强制类型转换（比如 +stringOfNumber 和 '' + foo 这样的形式）
         // 允许使用 !!foo 得到 boolean 值
         'no-implicit-coercion': [1, { boolean: false, number: true, string: true }],
+
+        // Globals should be explicitly assigned to `window` or `self` if that is the intent
+        'no-implicit-globals': 2,
 
         // 上下文中不存在 this 的时候不能引用 this （注意：只有函数名以大写字母开头的才会被认为是 constructor 函数）
         // 因为 jQuery 的事件回调中存在大量的 this 引用，所以这里暂时选择关闭，非 jQuery 项目请打开
@@ -291,4 +314,4 @@ module.exports = {
         // 个人认为这会影响可读性，而且 ESLint 已经保证了在条件判断中不会出现无意的赋值语句，所以禁用了这个规则
         'yoda': 0
     }
-};
+}

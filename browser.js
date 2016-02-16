@@ -11,4 +11,4 @@ module.exports = {
         // must be placed after esnext in order to override some of its rules
         'eslint-config-soda/rules/browser'
     ]
-};
+}

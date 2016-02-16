@@ -94,4 +94,4 @@ module.exports = {
         // Prevent missing parentheses around multilines JSX
         'react/wrap-multilines': 1
     }
-};
+}
