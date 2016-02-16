@@ -4,7 +4,15 @@
   "description": "ESLint configurations for my personal projects",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "eslint ."
+  },
+  "eslintConfig": {
+      "extends": [
+          "./node.js"
+      ],
+      "rules": {
+          "no-magic-numbers": [1, { "ignore": [0, 1, 2] }]
+      }
   },
   "repository": {
     "type": "git",
