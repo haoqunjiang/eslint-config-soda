@@ -5,7 +5,7 @@ module.exports = {
         es6: true
     },
     parserOptions: {
-        ecmaVersion: 6,
+        ecmaVersion: 7,
         ecmaFeatures: {
             // ES6+ modules are strict implicitly
             impliedStrict: true,
