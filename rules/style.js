@@ -23,10 +23,11 @@ module.exports = {
 
         // Enforces empty newlines after var, let or const
         // 在变量定义后应当跟着一行空行
-        'newline-after-var': [1, 'always'],
+        'newline-after-var': 0, // [1, 'always'],
 
         // Chained method calls with a depth greater than 3 should be followd by newline per call
-        'newline-per-chained-call': [1, { ignoreChainWithDepth: 2 }],
+        // Seems somewhat annoying in real life
+        'newline-per-chained-call': 0, // [1, { ignoreChainWithDepth: 3 }],
 
         // 一律使用单引号，除非字符串的值中有单引号
         'quotes': [1, 'single', 'avoid-escape'],

@@ -1,8 +1,8 @@
 /* eslint-disable no-magic-numbers */
 module.exports = {
     rules: {
-        // 单个函数最多有 30 行（内部的其他函数定义不算）
-        'max-statements': [2, 30],
+        // 单个函数最多有 50 行（内部的其他函数定义不算）
+        'max-statements': [2, 50],
 
         // 每行最多 140 个字符，比 80 个字符多一点，毕竟可能会有很多缩进，而且反正显示器够大
         'max-len': [1, { code: 140, ignoreComments: true, ignoreUrls: true }],
