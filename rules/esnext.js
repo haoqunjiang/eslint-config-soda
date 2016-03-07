@@ -1,5 +1,6 @@
 module.exports = {
-    parser: 'babel-eslint',
+    // temporarily disable babel-eslint, for eslint v2.3.0 compatibility
+    // parser: 'babel-eslint',
     env: {
         es6: true
     },
@@ -65,7 +66,11 @@ module.exports = {
         'object-shorthand': 0,  // [1, 'always', { ignoreConstructors: true }]
 
         // 如果需要使用的方法可以用 Reflect 的接口完成，则优先使用 Reflect
-        // 不过由于 Reflect 不可被 polyfill 而且也没有完整实现，暂不开启
+        // Reflect duplicates some methods of Object,
+        // but its methods return booleans indicating whether the operation succeeded
+        // (where the Object methods return the object that was modified).
+        // IMO, it's not superior to the original form, since it's more intuitive to use try..catch
+        // to handle exceptions than using return values.
         'prefer-reflect': 0,
 
         // es6 version of the rule `no-restricted-modules`
