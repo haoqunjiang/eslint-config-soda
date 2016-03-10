@@ -1,5 +1,2 @@
 extends:
     - ./node.js
-
-rules:
-    no-magic-numbers: [1, { ignore: [0, 1, 2] }]
