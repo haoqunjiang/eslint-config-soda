@@ -32,6 +32,8 @@ module.exports = {
         // 否则的话不必开启，不然的话连 self 这个变量名都没法用了……
         'no-shadow': ['error', { builtinGlobals: false, hoist: 'functions' }],
 
+        'no-restricted-globals': 'off',
+
         // 没必要把变量初始化为 undefined
         'no-undef-init': 'error',
 
@@ -44,6 +46,6 @@ module.exports = {
 
         // Magic numbers should preferably be replaced by named constants
         // -1 and 0 are allowed for the convinience of array manipulations
-        'no-magic-numbers': ['warn', { ignore: [-1, 0] }]    // eslint-disable-line no-magic-numbers
+        'no-magic-numbers': ['warn', { ignore: [-1, 0], ignoreArrayIndexes: true }]
     }
 }

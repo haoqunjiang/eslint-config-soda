@@ -25,6 +25,10 @@ module.exports = {
         // 在变量定义后应当跟着一行空行
         'newline-after-var': 'off', // [1, 'always'],
 
+        // requires a blank line before `return` statements,
+        // except when the `return` is alone inside a statement group (such as an if statement).
+        'newline-before-return': 'warn',
+
         // Chained method calls with a depth greater than 3 should be followd by newline per call
         // Seems somewhat annoying in real life
         'newline-per-chained-call': 'off', // [1, { ignoreChainWithDepth: 3 }],
