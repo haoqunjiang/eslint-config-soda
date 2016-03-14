@@ -96,7 +96,7 @@ module.exports = {
         'prefer-template': 'warn',
 
         // Disallow arrow functions in places where it could be confused with a comparison operator, so as to avoid potential typo
-        'no-confusing-arrow': 'error',
+        'no-confusing-arrow': ['error', { allowParens: true }],
 
         // Require braces in arrow function body when there might be confusions
         'arrow-body-style': ['warn', 'as-needed'],
