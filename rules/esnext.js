@@ -1,6 +1,6 @@
 module.exports = {
     // temporarily disable babel-eslint, for eslint v2.3.0 compatibility
-    // parser: 'babel-eslint',
+    parser: 'babel-eslint',
     env: {
         es6: true
     },
