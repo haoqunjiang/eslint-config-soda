@@ -18,12 +18,12 @@
   "homepage": "https://github.com/sodatea/eslint-config-soda#readme",
   "dependencies": {
     "babel-eslint": "^6.0.0-beta.6",
-    "eslint": "^2.3.0",
-    "eslint-plugin-react": "^4.2.0"
+    "eslint": "^2.4.0",
+    "eslint-plugin-react": "^4.2.3"
   },
   "peerDependencies": {
     "babel-eslint": "^6.0.0-beta.6",
-    "eslint": "^2.3.0",
-    "eslint-plugin-react": "^4.2.0"
+    "eslint": "^2.4.0",
+    "eslint-plugin-react": "^4.2.3"
   }
 }
