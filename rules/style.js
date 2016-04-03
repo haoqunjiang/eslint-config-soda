@@ -191,6 +191,9 @@ module.exports = {
 
         // Blacklist certain identifiers to prevent them being used
         // in variable declarations, function declarations and object properties
-        'id-blacklist': 'off'
+        'id-blacklist': 'off',
+
+        // A line of code containing too many statements can be difficult to read
+        'max-statements-per-line': ['warn', { max: 3 }]
     }
 }

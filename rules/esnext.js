@@ -1,8 +1,6 @@
 module.exports = {
-    // temporarily disable babel-eslint, for eslint v2.3.0 compatibility
-    parser: 'babel-eslint',
     env: {
-        es6: true
+        es6: true   // enable ES6+ globals such as Promise, Symbol, etc.
     },
     parserOptions: {
         ecmaVersion: 7,
@@ -81,7 +79,9 @@ module.exports = {
         'no-var': 'warn',
 
         // 对于不会被修改的变量，优先考虑使用 const 而非 let
-        'prefer-const': 'warn',
+        // Besides, if all variables in destructuring should be `const`, this rule warns the variables;
+        // otherwise, ignores them.
+        'prefer-const': ['warn', { destructuring: 'all' }],
 
         // 如果仅仅是为了使用数组作为函数参数，那么应该优先考虑使用 spread operator 而不是 .apply()
         'prefer-spread': 'warn',
@@ -107,6 +107,8 @@ module.exports = {
             ignoreCase: false,
             ignoreMemberSort: false,
             memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single']
-        }]
+        }],
+
+        'no-duplicate-imports': ['warn', { includeExports: false }]
     }
 }

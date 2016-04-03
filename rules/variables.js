@@ -42,7 +42,7 @@ module.exports = {
         'no-undefined': 'warn',
 
         // 定义过的变量都要被用到，不然的话很可能是没重构完导致的错误
-        'no-unused-vars': ['warn', { vars: 'all', args: 'after-used' }],
+        'no-unused-vars': ['warn', { vars: 'all', args: 'after-used', caughtErrors: 'none' }],
 
         // Magic numbers should preferably be replaced by named constants
         // -1 and 0 are allowed for the convinience of array manipulations

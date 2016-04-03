@@ -3,9 +3,6 @@
   "version": "1.0.1",
   "description": "ESLint configurations for my personal projects",
   "main": "index.js",
-  "scripts": {
-    "test": "eslint ."
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sodatea/eslint-config-soda.git"
@@ -17,13 +14,9 @@
   },
   "homepage": "https://github.com/sodatea/eslint-config-soda#readme",
   "dependencies": {
-    "babel-eslint": "^6.0.0-beta.6",
-    "eslint": "^2.4.0",
-    "eslint-plugin-react": "^4.2.3"
+    "eslint": "^2.6.0"
   },
   "peerDependencies": {
-    "babel-eslint": "^6.0.0-beta.6",
-    "eslint": "^2.4.0",
-    "eslint-plugin-react": "^4.2.3"
+    "eslint": "^2.6.0"
   }
 }
