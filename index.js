@@ -2,8 +2,6 @@ module.exports = {
     extends: [
         'eslint-config-soda/rules/esnext',
 
-        'eslint-config-soda/rules/react',
-
         'eslint-config-soda/rules/best-practices',
         'eslint-config-soda/rules/complexity',
         'eslint-config-soda/rules/strict',
