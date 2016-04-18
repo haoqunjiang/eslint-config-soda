@@ -9,9 +9,12 @@ module.exports = {
         'comma-dangle': ['error', 'never'],
 
         // Warns when using methods in `console` object
-        // Since `console` is usually used for debugging purpose, Thus should not be used in production environments
+        // Since `console` is usually used for debugging purpose, thus should not be used in production environments
         'no-console': 'warn',
 
+        // Production code should definitely not contain `debugger`
+        // Also, with the advent of modern debugging and development tools,
+        // `debugger` statement is less and less useful even in development environments.
         // 一般情况下不应该使用 debugger 语句进行调试
         'no-debugger': 'error',
 
@@ -43,7 +46,8 @@ module.exports = {
         'no-dupe-keys': 'error',
         'no-duplicate-case': 'error',
 
-        // 空代码块应该警告
+        // Empty block statements, while not technically errors, usually occur due to refactoring that wasn't completed
+        // 出现空代码块一般是因为重构不完整，很有可能是忘了实现什么功能，所以除非明确注释说有意留空，不然都要警告
         'no-empty': 'warn',
 
         // Disallow use of empty functions

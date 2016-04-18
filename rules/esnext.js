@@ -89,8 +89,11 @@ module.exports = {
         // prefer rest parameters than `arguments`
         'prefer-rest-params': 'warn',
 
-        // 回调函数尽可能使用箭头函数，而不是 Inline 的匿名函数
-        'prefer-arrow-callback': 'warn',
+        // It's better to use arrow functions as callbacks,
+        // unless you need to have a special `this` binding for the callback,
+        // or you want the function be named.
+        // 回调函数尽可能使用箭头函数，而不是 inline 的匿名函数
+        'prefer-arrow-callback': ['warn', { allowNamedFunctions: true }],
 
         // 禁止复杂的字符串拼接，用模板引擎或 ES6 template string 替代
         'prefer-template': 'warn',

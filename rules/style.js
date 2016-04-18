@@ -34,13 +34,14 @@ module.exports = {
         'newline-per-chained-call': 'off', // [1, { ignoreChainWithDepth: 3 }],
 
         // 一律使用单引号，除非字符串的值中有单引号
-        'quotes': ['warn', 'single', 'avoid-escape'],
+        // 只在必要时（用到了变量替换、换行或者 tagged templates 这几个特性之一）使用 template literals
+        'quotes': ['warn', 'single', { avoidEscape: true, allowTemplateLiterals: false }],
 
         // 采用 4 个空格缩进，可以使代码看起来更整洁点
         'indent': ['warn', 4, { SwitchCase: 1 }],   // eslint-disable-line no-magic-numbers
 
         // 严禁空格和 Tab 混用
-        'no-mixed-spaces-and-tabs': 2,
+        'no-mixed-spaces-and-tabs': 'error',
 
         // 禁止多个连续空格
         // 例外：对象属性、变量定义和 import 语句
