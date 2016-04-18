@@ -134,9 +134,12 @@ module.exports = {
         // 采用驼峰命名法（不检查对象属性的命名，考虑到可能会和后端数据通信等情况）
         'camelcase': ['warn', { properties: 'never' }],
 
-        // 如果要把 this 赋给一个临时的变量，那这个变量必须命名为 self 或者 that，不能有其他别名
-        // ES6+ 的项目请使用箭头函数，不需要这个规则，参见 smells/no-this-assign 规则
-        'consistent-this': ['warn', 'self', 'that'],
+        // Given that `self` is used in browsers, you shouldn’t do: `var self = this`
+        // 如果要把 this 赋给一个临时的变量，那这个变量必须命名为 that，不能有其他别名
+        // 不建议使用 self，因为 self 在浏览器中是一个全局变量
+        // 尤其是在 Web Worker 中，不存在 window，只有 self，此时不应该把 self 作为 this 的别名
+        // ES6+ 的项目请使用箭头函数，一般不需要用到这个规则
+        'consistent-this': ['warn', 'that'],
 
         // 不要求每个函数都有 function name，函数表达式里还是允许匿名函数的，不过给函数表达式加上函数名有利于输出更清晰的 stack trace
         'func-names': 'off',
