@@ -18,5 +18,9 @@
   },
   "peerDependencies": {
     "eslint": "^2.8.0"
-  }
+  },
+  "files": [
+    "rules",
+    "*.js"
+  ]
 }
