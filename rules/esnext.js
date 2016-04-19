@@ -106,7 +106,7 @@ module.exports = {
 
         // sort import statements
         // http://eslint.org/docs/rules/sort-imports
-        'sort-imports': ['warn', {
+        'sort-imports': ['off', {
             ignoreCase: false,
             ignoreMemberSort: false,
             memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single']
