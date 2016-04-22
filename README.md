@@ -5,10 +5,12 @@ ESLint configurations for my personal projects.
 
 Since ESLint v2 removes the `ecmaFeatures` that are specific to ES6,
 we now need to develop a plugin to disable some unrecommended ES6 features.
-This features are:
-    1. `objectLiteralDuplicateProperties` (error prone)
-    2. `regexYFlag` (since it's not fully polyfillable)
-    3. `generators` (should be forbidden in browser, as the regenerator runtime is too big)
+
+These features are:
+
+1. `objectLiteralDuplicateProperties` (error prone)
+2. `regexYFlag` (since it's not fully polyfillable)
+3. `generators` (should be forbidden in browser, as the regenerator runtime is too big)
 
 ## Usage
 

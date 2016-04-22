@@ -29,7 +29,7 @@ module.exports = {
 
         // 禁止跟上层作用域中的变量重名
         // 如果代码写在最外层作用域的话，建议开启 builtinGlobal: true，以避免与 window 下的全局属性重名
-        // 否则的话不必开启，不然的话连 self 这个变量名都没法用了……
+        // 否则的话不必开启，不然的话连 find/close 这种都没法用了……
         'no-shadow': ['error', { builtinGlobals: false, hoist: 'functions' }],
 
         'no-restricted-globals': 'off',
