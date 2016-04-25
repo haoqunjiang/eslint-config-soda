@@ -27,7 +27,7 @@ module.exports = {
 
         // requires a blank line before `return` statements,
         // except when the `return` is alone inside a statement group (such as an if statement).
-        'newline-before-return': 'warn',
+        'newline-before-return': 'off',
 
         // Chained method calls with a depth greater than 3 should be followd by newline per call
         // Seems somewhat annoying in real life
