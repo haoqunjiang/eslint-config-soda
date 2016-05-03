@@ -17,9 +17,9 @@ module.exports = {
     // 如果在点号 . 处换行，点号应当在下一行行首
     'dot-location': ['warn', 'property'],
 
-    // 如果在操作符（比如 +）处换行，操作符应当在下一行行首nt
-    // 对于一长串字符串的拼接，感觉在行末更舒服
-    'operator-linebreak': 'off',    // [1, before]
+    // 如果在操作符（比如 +）处换行，操作符应当在行末，三元操作符除外
+    // Follows semicolon-less coding style's best practices
+    'operator-linebreak': ['error', 'after', { overrides: { '?': 'ignore' } }],
 
     // Enforces empty newlines after var, let or const
     // 在变量定义后应当跟着一行空行
