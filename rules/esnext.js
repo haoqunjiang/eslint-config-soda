@@ -28,6 +28,9 @@ module.exports = {
     // Disallows spaces inside of the curly brace pair of template string interpolations
     'template-curly-spacing': ['warn', 'never'],
 
+    // It’s unnecessary to use computed properties with literals
+    'no-useless-computed-key': 'error',
+
     // ES2015 provides a default class constructor if one is not specified.
     // As such, it is unnecessary to provide an empty constructor or one that simply delegates into its parent class.
     'no-useless-constructor': 'warn',

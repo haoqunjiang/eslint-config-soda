@@ -281,6 +281,10 @@ module.exports = {
     // throw 后面跟的只能是 new Error 对象，以便记录和查看调用栈
     'no-throw-literal': 'error',
 
+    // JavaScript suspends the control flow statements of try and catch blocks until the execution of finally block finishes
+    // So, when return, throw, break, or continue is used in finally, control flow statements inside try and catch are overwritten, which is considered as unexpected behavior
+    'no-unsafe-finally': 'error',
+
     // 尽量不要出现没有用到的表达式
     // 允许使用短路求值（a && b() 这种）
     'no-unused-expressions': ['warn', { allowShortCircuit: true }],
