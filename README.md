@@ -60,30 +60,33 @@ Here are the examples:
 1. ES6 modules:
 ```JSON
 {
-    "extends": "soda",
-    "parserOptions": {
-        "sourceType": "module"
-    }
+  "extends": "soda",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "strict": "never"
+  }
 }
 ```
 
 2. CommonJS modules
 ```JSON
 {
-    "extends": "soda",
-    "env": {
-        "commonjs": true
-    }
+  "extends": "soda",
+  "env": {
+    "commonjs": true
+  }
 }
 ```
 
 3. AMD modules
 ```JSON
 {
-    "extends": "soda",
-    "env": {
-        "amd": true
-    }
+  "extends": "soda",
+  "env": {
+    "amd": true
+  }
 }
 ```
 
