@@ -1,13 +1,13 @@
 module.exports = {
   extends: [
-    'eslint-config-soda/rules/esnext',
+    './rules/esnext.js',
 
-    'eslint-config-soda/rules/best-practices',
-    'eslint-config-soda/rules/complexity',
-    'eslint-config-soda/rules/strict',
-    'eslint-config-soda/rules/style',
-    'eslint-config-soda/rules/variables',
+    './rules/best-practices.js',
+    './rules/complexity.js',
+    './rules/strict.js',
+    './rules/style.js',
+    './rules/variables.js',
 
-    'eslint-config-soda/rules/node'
-  ]
+    './rules/node.js',
+  ],
 }

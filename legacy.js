@@ -1,14 +1,14 @@
 module.exports = {
   extends: [
-    'eslint-config-soda/rules/best-practices',
-    'eslint-config-soda/rules/complexity',
-    'eslint-config-soda/rules/strict',
-    'eslint-config-soda/rules/style',
-    'eslint-config-soda/rules/variables',
+    './rules/best-practices.js',
+    './rules/complexity.js',
+    './rules/strict.js',
+    './rules/style.js',
+    './rules/variables.js',
 
-      // must be placed after esnext in order to override some of its rules
-    'eslint-config-soda/rules/browser',
+    // must be placed after esnext in order to override some of its rules
+    './rules/browser.js',
 
-    'eslint-config-soda/rules/legacy'
-  ]
+    './rules/legacy.js',
+  ],
 }
