@@ -64,7 +64,7 @@ module.exports = {
     // 1. Use object shorthands only when it can imporve readability
     // 2. Notice that [object literal shorthands cannot be used as constructors](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions#Method_definitions_are_not_constructable)
     // 是否使用 object shorthand 应该由开发者视可读性而定，不一刀切
-    'object-shorthand': 'off',  // [1, 'always', { ignoreConstructors: true }]
+    'object-shorthand': 'off',  // [1, 'always', { avoidQuotes: true, ignoreConstructors: true }]
 
     // 如果需要使用的方法可以用 Reflect 的接口完成，则优先使用 Reflect
     // Reflect duplicates some methods of Object,
@@ -115,6 +115,8 @@ module.exports = {
       memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single']
     }],
 
-    'no-duplicate-imports': ['warn', { includeExports: false }]
+    'no-duplicate-imports': ['error', { includeExports: false }],
+
+    'no-useless-rename': 'error',
   }
 }

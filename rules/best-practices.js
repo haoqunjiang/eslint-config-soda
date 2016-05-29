@@ -30,7 +30,7 @@ module.exports = {
 
     // Comparing a literal expression in a condition is usually a typo or development trigger for a specific behavior
     // 条件表达式不能为常数（比如 if (true) 这种）
-    'no-constant-condition': 'error',
+    'no-constant-condition': ['error', { checkLoops: true }],
 
     // 条件语句中没必要特地用双重否定 !! 将表达式转换为 boolean 类型
     'no-extra-boolean-cast': 'warn',
@@ -139,7 +139,7 @@ module.exports = {
 
     // 保证函数要么肯定会有返回值，要么肯定没有返回值，避免一些难以察觉的问题
     // 不过，更好的办法是直接用上 TypeScript/flow 写强类型的代码
-    'consistent-return': 'warn',
+    'consistent-return': ['warn', { treatUndefinedAsUnspecified: true }],
 
     // if / else if / else / for / while / do 后面跟的代码块，必须加上花括号 {}
     'curly': ['warn', 'all'],

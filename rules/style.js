@@ -200,6 +200,10 @@ module.exports = {
     'id-blacklist': 'off',
 
     // A line of code containing too many statements can be difficult to read
-    'max-statements-per-line': ['warn', { max: 3 }]
+    'max-statements-per-line': ['warn', { max: 3 }],
+
+    'object-property-newline': ['warn', { allowMultiplePropertiesPerLine: true }],
+
+    'unicode-bom': ['error', 'never'],
   }
 }
