@@ -1,6 +1,9 @@
 /* eslint-disable no-magic-numbers */
 module.exports = {
   rules: {
+    // 单个文件最多 300 行
+    'max-lines': ['warn', { max: 300, skipBlankLines: true, skipComments: true }],
+
     // 单个函数最多有 50 行（内部的其他函数定义不算）
     'max-statements': ['warn', { max: 50 }],
 

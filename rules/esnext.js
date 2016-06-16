@@ -28,6 +28,9 @@ module.exports = {
     // Disallows spaces inside of the curly brace pair of template string interpolations
     'template-curly-spacing': ['warn', 'never'],
 
+    // Whitespace is not allowed between spread operators and their expressions
+    'rest-spread-spacing': ['warn', 'never'],
+
     // It’s unnecessary to use computed properties with literals
     'no-useless-computed-key': 'error',
 
@@ -105,7 +108,7 @@ module.exports = {
     'no-confusing-arrow': ['error', { allowParens: true }],
 
     // Require braces in arrow function body when there might be confusions
-    'arrow-body-style': ['warn', 'as-needed'],
+    'arrow-body-style': ['warn', 'as-needed', { requireReturnForObjectLiteral: false }],
 
     // sort import statements
     // http://eslint.org/docs/rules/sort-imports

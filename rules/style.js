@@ -88,6 +88,10 @@ module.exports = {
     // object literal 的 { 后以及 } 前都应有空格
     'object-curly-spacing': ['warn', 'always'],
 
+    // Requires line breaks if there are line breaks inside properties or between properties
+    // Otherwise, disallows line breaks
+    // 'object-curly-newline': ['warn', { multiline: true }],
+
     // 对于数组的话，个人觉得不带空格更美观
     'array-bracket-spacing': ['warn', 'never'],
 

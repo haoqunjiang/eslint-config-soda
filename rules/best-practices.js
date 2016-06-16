@@ -60,6 +60,9 @@ module.exports = {
     // 为了可读性，允许有不必要的括号
     'no-extra-parens': 'off',
 
+    // 这个规则实施起来太繁琐，暂时也不启用
+    'no-mixed-operators': 'off',
+
     // 多余的分号会警告
     'no-extra-semi': 'warn',
 
