@@ -6,7 +6,7 @@ module.exports = {
     'array-callback-return': 'error',
 
     // Trailing commas are no longer bad practices since IE8 leaves the stage
-    'comma-dangle': ['error', 'only-multiline'],
+    'comma-dangle': ['warn', 'only-multiline'],
 
     // Warns when using methods in `console` object
     // Since `console` is usually used for debugging purpose, thus should not be used in production environments

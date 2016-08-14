@@ -40,10 +40,14 @@ module.exports = {
     // 2 spaces for indentation
     // As Google, npm, Node.js, Idiomatic all follow this convention
     // The default package.json and .travis.yml use 2 space indent, too
+    // `case` clauses in `switch` statements should be indented
     'indent': ['warn', 2, { SwitchCase: 1 }],   // eslint-disable-line no-magic-numbers
 
     // 严禁空格和 Tab 混用
     'no-mixed-spaces-and-tabs': 'error',
+
+    // ESLint 这个规则只是为了和 JSCS 兼容，我觉得有 indent 规则就差不多了，所以关掉
+    'no-tabs': 'off',
 
     // 禁止多个连续空格
     // 例外：对象属性、变量定义和 import 语句
@@ -207,6 +211,8 @@ module.exports = {
     'max-statements-per-line': ['warn', { max: 3 }],
 
     'object-property-newline': ['warn', { allowMultiplePropertiesPerLine: true }],
+
+    'multiline-ternary': 'off',
 
     'unicode-bom': ['error', 'never'],
   }
