@@ -38,8 +38,9 @@ module.exports = {
     // if else 语句中，if 的条件应当是肯定形式的，这样更加易读
     'no-negated-condition': 'warn',
 
-    // 提醒开发者不要把 !(a in b) 写成 !a in b
-    'no-negated-in-lhs': 'error',
+    // The precedence of `in` and `instanceof` is lower than `!`
+    // So do not mistakenly type `!a in b ` when you actually mean `!(a in b)`
+    'no-unsafe-negation': 'error',
 
     // 函数参数、对象定义时的属性、case 语句的标签名不允许重名
     'no-dupe-args': 'error',
@@ -112,7 +113,7 @@ module.exports = {
     'no-unreachable': 'error',
 
     // Self assignments have no effect, so probably those are an error due to incomplete refactoring
-    'no-self-assign': 'error',
+    'no-self-assign': ['error', { props: true }],
 
     // Variables in a loop condition often are modified in the loop. If not, it's possibly a mistake
     'no-unmodified-loop-condition': 'error',
@@ -200,8 +201,8 @@ module.exports = {
     // 给 a 标签的 href 赋值为 javascript:void(0) 时可以临时禁止（个人认为 javascript:void(0) 优于 //）
     'no-script-url': 'warn',
 
-    // 禁止对原生对象进行覆盖赋值
-    'no-native-reassign': 'error',
+    // 禁止对原生/全局对象进行覆盖赋值
+    'no-global-assign': 'error',
 
     // 禁止扩展原生对象，如果是 polyfill，也建议直接引用 core-js 等第三方库而不是自己写
     'no-extend-native': 'error',

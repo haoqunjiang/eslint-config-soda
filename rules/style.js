@@ -29,7 +29,7 @@ module.exports = {
     // except when the `return` is alone inside a statement group (such as an if statement).
     'newline-before-return': 'off',
 
-    // Chained method calls with a depth greater than 3 should be followd by newline per call
+    // Chained method calls with a   depth greater than 3 should be followd by newline per call
     // Seems somewhat annoying in real life
     'newline-per-chained-call': 'off', // [1, { ignoreChainWithDepth: 3 }],
 
@@ -57,7 +57,7 @@ module.exports = {
     'no-trailing-spaces': 'warn',
 
     // 调用函数时，函数名和括号间不能有空格
-    'no-spaced-func': 'warn',
+    'func-call-spacing': ['warn', 'never'],
 
     // Alerts for whitespace around the dot or before the opening bracket before properties of objects if they are on the same line
     'no-whitespace-before-property': 'warn',
@@ -195,6 +195,9 @@ module.exports = {
 
     // 变量声明的顺序由作者自行考虑，不强制
     'sort-vars': 'off',
+
+    // 对象键值也没必要定死排序的规则
+    'sort-keys': 'off',
 
     // operator assignment shorthand 如 += 等，在可读性好的时候再用，不强制统一风格
     'operator-assignment': 'off',

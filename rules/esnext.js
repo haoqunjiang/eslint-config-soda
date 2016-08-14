@@ -121,5 +121,10 @@ module.exports = {
     'no-duplicate-imports': ['error', { includeExports: false }],
 
     'no-useless-rename': 'error',
+
+    // It can be easy to use the wrong quotes when wanting to use template literals,
+    // by writing "${variable}", and end up with the literal value "${variable}"
+    // instead of a string containing the value of the injected expressions
+    'no-template-curly-in-string': 'error',
   }
 }
