@@ -9,6 +9,6 @@ module.exports = {
     'prefer-const': 'off',
     'prefer-spread': 'off',
     'prefer-arrow-callback': 'off',
-    'prefer-template': 'off'
-  }
+    'prefer-template': 'off',
+  },
 }

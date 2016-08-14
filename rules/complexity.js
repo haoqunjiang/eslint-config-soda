@@ -27,6 +27,6 @@ module.exports = {
     // Why 15? [Here are some other recommendations](https://github.com/eslint/eslint/issues/4808#issuecomment-167795140)
     // And I chose 15 as a personal preference
     // 圈复杂度上限为 15
-    'complexity': ['warn', { max: 15 }]
-  }
+    'complexity': ['warn', { max: 15 }],
+  },
 }

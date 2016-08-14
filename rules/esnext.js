@@ -1,6 +1,6 @@
 module.exports = {
   env: {
-    es6: true   // enable ES6+ globals such as Promise, Symbol, etc.
+    es6: true,  // enable ES6+ globals such as Promise, Symbol, etc.
   },
   parserOptions: {
     ecmaVersion: 7,
@@ -9,8 +9,8 @@ module.exports = {
       impliedStrict: true,
 
       // jsx should not be enabled for non-react projects
-      jsx: false
-    }
+      jsx: false,
+    },
   },
   rules: {
     // 箭头函数的参数，即使只有一个也要带上括号
@@ -115,7 +115,7 @@ module.exports = {
     'sort-imports': ['off', {
       ignoreCase: false,
       ignoreMemberSort: false,
-      memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single']
+      memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
     }],
 
     'no-duplicate-imports': ['error', { includeExports: false }],
@@ -126,5 +126,5 @@ module.exports = {
     // by writing "${variable}", and end up with the literal value "${variable}"
     // instead of a string containing the value of the injected expressions
     'no-template-curly-in-string': 'error',
-  }
+  },
 }

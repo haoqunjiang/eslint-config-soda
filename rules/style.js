@@ -115,7 +115,7 @@ module.exports = {
       allowObjectStart: true,
       allowObjectEnd: true,
       allowArrayStart: true,
-      allowArrayEnd: true
+      allowArrayEnd: true,
     }],
 
     // 代码块首尾不应有空行
@@ -218,5 +218,5 @@ module.exports = {
     'multiline-ternary': 'off',
 
     'unicode-bom': ['error', 'never'],
-  }
+  },
 }

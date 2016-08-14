@@ -47,6 +47,6 @@ module.exports = {
     // Magic numbers should preferably be replaced by named constants
     // -1 and 0 are allowed for the convinience of array manipulations
     // 1 allowed for increment/decrement
-    'no-magic-numbers': ['warn', { ignore: [-1, 0], ignoreArrayIndexes: true }]
-  }
+    'no-magic-numbers': ['warn', { ignore: [-1, 0], ignoreArrayIndexes: true }],
+  },
 }

@@ -6,7 +6,7 @@ module.exports = {
     'array-callback-return': 'error',
 
     // Trailing commas are no longer bad practices since IE8 leaves the stage
-    'comma-dangle': ['warn', 'only-multiline'],
+    'comma-dangle': ['warn', 'always-multiline'],
 
     // Warns when using methods in `console` object
     // Since `console` is usually used for debugging purpose, thus should not be used in production environments
@@ -327,6 +327,6 @@ module.exports = {
 
     // yoda conditions 即，条件判断语句中，常量前置
     // 个人认为这会影响可读性，而且 ESLint 已经保证了在条件判断中不会出现无意的赋值语句，所以禁用了这个规则
-    'yoda': 'off'
-  }
+    'yoda': 'off',
+  },
 }

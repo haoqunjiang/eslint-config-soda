@@ -1,6 +1,6 @@
 module.exports = {
   env: {
-    node: true
+    node: true,
   },
   rules: {
     // Enables methods in `console` object
@@ -39,6 +39,6 @@ module.exports = {
 
     // 出于性能和可读性考虑，只能在最外层使用 require
     // 个人感觉不是很有必要
-    'global-require': 'off'
-  }
+    'global-require': 'off',
+  },
 }
