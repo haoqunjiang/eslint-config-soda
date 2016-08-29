@@ -328,5 +328,8 @@ module.exports = {
     // yoda conditions 即，条件判断语句中，常量前置
     // 个人认为这会影响可读性，而且 ESLint 已经保证了在条件判断中不会出现无意的赋值语句，所以禁用了这个规则
     'yoda': 'off',
+
+    // If a class method does not use this, it can safely be made a static function
+    'class-methods-use-this': 'warn',
   },
 }

@@ -3,7 +3,7 @@ module.exports = {
     es6: true,  // enable ES6+ globals such as Promise, Symbol, etc.
   },
   parserOptions: {
-    ecmaVersion: 7,
+    ecmaVersion: 2016,
     ecmaFeatures: {
       // ES6+ modules are strict implicitly
       impliedStrict: true,
@@ -64,6 +64,9 @@ module.exports = {
     // `new Symbol()` throws a `TypeError` exception
     'no-new-symbol': 'error',
 
+    // Requires a description when creating symbols
+    'symbol-description': 'error',
+
     // 1. Use object shorthands only when it can imporve readability
     // 2. Notice that [object literal shorthands cannot be used as constructors](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions#Method_definitions_are_not_constructable)
     // 是否使用 object shorthand 应该由开发者视可读性而定，不一刀切
@@ -77,7 +80,7 @@ module.exports = {
     // to handle exceptions than using return values.
     'prefer-reflect': 'off',
 
-    // es6 version of the rule `no-restricted-modules`
+    // ES6 version of the rule `no-restricted-modules`
     // 禁止某些库的使用，一般情况下用不到
     // no-restricted-imports: [2, 'os', 'fs']
 
@@ -92,7 +95,7 @@ module.exports = {
     // 如果仅仅是为了使用数组作为函数参数，那么应该优先考虑使用 spread operator 而不是 .apply()
     'prefer-spread': 'warn',
 
-    // prefer rest parameters than `arguments`
+    // Prefer rest parameters than `arguments`
     'prefer-rest-params': 'warn',
 
     // It's better to use arrow functions as callbacks,
