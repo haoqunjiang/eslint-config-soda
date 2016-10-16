@@ -11,6 +11,9 @@ module.exports = {
     // 逗号只能出现在行中或行末，不能出现在行首
     'comma-style': ['warn', 'last'],
 
+    // Trailing commas are no longer bad practices since IE8 leaves the stage
+    'comma-dangle': ['warn', 'always-multiline'],
+
     // 逗号前不得有空格，逗号后（如果有内容）必须有空格
     'comma-spacing': ['warn', { before: false, after: true }],
 
@@ -118,6 +121,9 @@ module.exports = {
       allowArrayEnd: true,
     }],
 
+    // Requires blank lines around 'use strict' and 'use asm'
+    'lines-around-directive': ['warn', 'always'],
+
     // 代码块首尾不应有空行
     'padded-blocks': ['warn', 'never'],
 
@@ -129,7 +135,7 @@ module.exports = {
     'linebreak-style': ['error', 'unix'],
 
     // 非空文件应当以换行结尾（UNIX 惯例）
-    'eol-last': 'warn',
+    'eol-last': ['warn', 'always'],
 
     // else 语句中如果有且仅有一个 if 判断
     // 即，形如 else { if () {} } 的语句，应当用 else if 代替
@@ -218,5 +224,8 @@ module.exports = {
     'multiline-ternary': 'off',
 
     'unicode-bom': ['error', 'never'],
+
+    // Requires function names to match the name of the variable or property to which they are assigned
+    'func-name-matching': 'error',
   },
 }

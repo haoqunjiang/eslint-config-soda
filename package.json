@@ -14,12 +14,12 @@
   },
   "homepage": "https://github.com/sodatea/eslint-config-soda#readme",
   "dependencies": {
-    "eslint": "^3.4.0",
-    "eslint-plugin-import": "^1.14.0"
+    "eslint": "^3.8.0",
+    "eslint-plugin-import": "^1.16.0"
   },
   "peerDependencies": {
-    "eslint": "^3.3.0",
-    "eslint-plugin-import": "^1.10.0"
+    "eslint": "^3.8.0",
+    "eslint-plugin-import": "^1.16.0"
   },
   "files": [
     "rules",

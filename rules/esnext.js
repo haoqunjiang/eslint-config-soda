@@ -3,7 +3,7 @@ module.exports = {
     es6: true,  // enable ES6+ globals such as Promise, Symbol, etc.
   },
   parserOptions: {
-    ecmaVersion: 2016,
+    ecmaVersion: 2017,
     ecmaFeatures: {
       // ES6+ modules are strict implicitly
       impliedStrict: true,
@@ -13,8 +13,8 @@ module.exports = {
     },
   },
   rules: {
-    // 箭头函数的参数，即使只有一个也要带上括号
-    'arrow-parens': ['warn', 'always'],
+    // 箭头函数的参数，只有一个时，除非函数体带花括号否则不需要加小括号
+    'arrow-parens': ['warn', 'as-needed', { requireForBlockBody: true }],
 
     // => 前后都应有空格
     'arrow-spacing': ['warn', { before: true, after: true }],
@@ -91,6 +91,10 @@ module.exports = {
     // Besides, if all variables in destructuring should be `const`, this rule warns the variables;
     // otherwise, ignores them.
     'prefer-const': ['warn', { destructuring: 'all' }],
+
+    // Now that binary, octal, and hexadecimal literals are supported in ES6,
+    // you no longer need to call parseInt on string literals to get the numeric value.
+    'prefer-numeric-literals': ['warn'],
 
     // 如果仅仅是为了使用数组作为函数参数，那么应该优先考虑使用 spread operator 而不是 .apply()
     'prefer-spread': 'warn',

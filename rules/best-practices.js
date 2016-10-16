@@ -5,9 +5,6 @@ module.exports = {
     // If we forget to write return statement in a callback of those, it's probably a mistake.
     'array-callback-return': 'error',
 
-    // Trailing commas are no longer bad practices since IE8 leaves the stage
-    'comma-dangle': ['warn', 'always-multiline'],
-
     // Warns when using methods in `console` object
     // Since `console` is usually used for debugging purpose, thus should not be used in production environments
     'no-console': 'warn',
@@ -320,7 +317,7 @@ module.exports = {
 
     // IIFE 调用必须用括弧 () 包裹
     // 例：var x = (function () { return { y: 'warn' };})();
-    'wrap-iife': ['error', 'inside'],
+    'wrap-iife': ['error', 'inside', { functionPrototypeMethods: true }],
 
     // 如果代码里有注释以 'TODO'、'FIXME' 字样开头的话，警告
     'no-warning-comments': ['warn', { terms: ['todo', 'fixme'], location: 'start' }],
