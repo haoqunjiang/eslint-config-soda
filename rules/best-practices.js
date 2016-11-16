@@ -301,6 +301,8 @@ module.exports = {
     // 在字符串或者正则表达式里使用无效的转义字符是没有效果的，因此这很有可能是写错了
     'no-useless-escape': 'error',
 
+    'no-useless-return': 'error',
+
     // ES5- 的 undefined 是可覆盖赋值的，而且子作用域里可以定义一个叫 undefined 的变量覆盖掉全局的 undefined
     // 所以此时需要用 void 0 获得真正的 undefined
     // 但一般情况下没必要用到 void，所以警告

@@ -226,6 +226,6 @@ module.exports = {
     'unicode-bom': ['error', 'never'],
 
     // Requires function names to match the name of the variable or property to which they are assigned
-    'func-name-matching': 'error',
+    'func-name-matching': ['error', 'always', { includeCommonJSModuleExports: false }],
   },
 }

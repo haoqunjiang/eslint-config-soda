@@ -52,9 +52,6 @@ module.exports = {
     // A = 0;
     'no-class-assign': 'error',
 
-    // 不能对常量进行赋值
-    'no-const-assign': 'error',
-
     // 禁止 class 定义中出现两个同名成员
     'no-dupe-class-members': 'error',
 
@@ -72,14 +69,6 @@ module.exports = {
     // 是否使用 object shorthand 应该由开发者视可读性而定，不一刀切
     'object-shorthand': 'off',  // [1, 'always', { avoidQuotes: true, ignoreConstructors: true }]
 
-    // 如果需要使用的方法可以用 Reflect 的接口完成，则优先使用 Reflect
-    // Reflect duplicates some methods of Object,
-    // but its methods return booleans indicating whether the operation succeeded
-    // (where the Object methods return the object that was modified).
-    // IMO, it's not superior to the original form, since it's more intuitive to use try..catch
-    // to handle exceptions than using return values.
-    'prefer-reflect': 'off',
-
     // ES6 version of the rule `no-restricted-modules`
     // 禁止某些库的使用，一般情况下用不到
     // no-restricted-imports: [2, 'os', 'fs']
@@ -90,7 +79,12 @@ module.exports = {
     // 对于不会被修改的变量，优先考虑使用 const 而非 let
     // Besides, if all variables in destructuring should be `const`, this rule warns the variables;
     // otherwise, ignores them.
+    // 注意，[在最新的标准里，对 const 重新赋值是 runtime error](http://www.cnblogs.com/ziyunfei/p/6043513.html)
+    // 所以需要开启 no-const-assign 配合，不然直接运行的话可能出现意料之外的错
     'prefer-const': ['warn', { destructuring: 'all' }],
+
+    // 不能对常量进行赋值
+    'no-const-assign': 'error',
 
     // Now that binary, octal, and hexadecimal literals are supported in ES6,
     // you no longer need to call parseInt on string literals to get the numeric value.

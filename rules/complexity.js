@@ -8,7 +8,15 @@ module.exports = {
     'max-statements': ['warn', { max: 50 }],
 
     // 每行最多 140 个字符，比 80 个字符多一点，毕竟可能会有很多缩进，而且反正显示器够大
-    'max-len': ['warn', { code: 140, ignoreComments: true, ignoreUrls: true }],
+    'max-len': ['warn', {
+      code: 140,
+      ignoreComments: true,
+      ignoreTrailingComments: true,
+      ignoreUrls: true,
+      ignoreStrings: true,
+      ignoreTemplateLiterals: true,
+      ignoreRegExpLiterals: true,
+    }],
 
     // If a function has too many parameters, you should consider taking an `option` object as the paramter.
     // Better turn off for AMD & Angular 1.x modules by inline comments
