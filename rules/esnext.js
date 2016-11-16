@@ -127,5 +127,8 @@ module.exports = {
     // by writing "${variable}", and end up with the literal value "${variable}"
     // instead of a string containing the value of the injected expressions
     'no-template-curly-in-string': 'error',
+
+    // Inside an async function, return await is useless
+    'no-return-await': 'error',
   },
 }

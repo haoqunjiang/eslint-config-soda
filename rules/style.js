@@ -157,7 +157,7 @@ module.exports = {
     // ES6+ 的项目请使用箭头函数，一般不需要用到这个规则
     'consistent-this': ['warn', 'that'],
 
-    // 不要求每个函数都有 function name，函数表达式里还是允许匿名函数的，不过给函数表达式加上函数名有利于输出更清晰的 stack trace
+    // 不要求每个函数都有 function name，因为 IIFE 还是很常用的，不过给函数表达式加上函数名有利于输出更清晰的 stack trace
     'func-names': 'off',
 
     // 使用函数表达式还是函数声明来定义函数，随开发者喜好而定，不作要求
