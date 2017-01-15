@@ -130,5 +130,12 @@ module.exports = {
 
     // Inside an async function, return await is useless
     'no-return-await': 'error',
+
+    'prefer-destructuring': ['warn', {
+      array: false,
+      object: true,
+    }, {
+      enforceForRenamedProperties: false,
+    }],
   },
 }

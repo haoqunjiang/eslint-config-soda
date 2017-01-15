@@ -330,5 +330,10 @@ module.exports = {
 
     // If a class method does not use this, it can safely be made a static function
     'class-methods-use-this': 'warn',
+
+    // Async functions which have no await expression may be the unintentional result of refactoring
+    'require-await': 'error',
+
+    'no-await-in-loop': 'error',
   },
 }

@@ -227,5 +227,7 @@ module.exports = {
 
     // Requires function names to match the name of the variable or property to which they are assigned
     'func-name-matching': ['error', 'always', { includeCommonJSModuleExports: false }],
+
+    'capitalized-comments': 'off',
   },
 }
