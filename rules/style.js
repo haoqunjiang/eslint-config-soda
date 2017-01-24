@@ -229,5 +229,8 @@ module.exports = {
     'func-name-matching': ['error', 'always', { includeCommonJSModuleExports: false }],
 
     'capitalized-comments': 'off',
+
+    // disallow use of chained assignment expressions
+    'no-multi-assign': 'error',
   },
 }

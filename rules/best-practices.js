@@ -335,5 +335,8 @@ module.exports = {
     'require-await': 'error',
 
     'no-await-in-loop': 'error',
+
+    // Promises are only rejected with Error objects
+    'prefer-promise-reject-errors': ['error', { allowEmptyReject: true }],
   },
 }
